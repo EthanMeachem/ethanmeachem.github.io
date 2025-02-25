@@ -42,6 +42,9 @@ function draw() {
   rect(500,500, 1000, 200);
   //trees
   tree(100,325, 100);
+  tree(900, 350, 125);
+  tree(550, 310, 95);
+  tree(260, 360, 130);
 
 
   //CHARACTER
@@ -49,7 +52,7 @@ function draw() {
     voltorb(500,415,125);
   }
   else if (explosionStatus === 1){
-    explodingVoltorb(500,415,125);
+    explodingVoltorb(500,415);
   }
   else{
     explosionStatus = 0;
@@ -80,7 +83,21 @@ function voltorb(x, y, w){
   circle(x+w/4, y-w/6, w/15);
 }
 
-function explodingVoltorb(x,y,w){}
+function explodingVoltorb(x,y){
+//pointy explosion base thing
+  fill("red");
+  triangle(x , y/1.5, x/1.3, y*1.2, x*1.2, y*1.1);
+  triangle(x*1.05,y*1.2, x/1.35, y/1.2, x*1.15, y/1.2);
+//inside yellow part
+  fill("yellow");
+  triangle(x, y/1.45,x/1.25, y*1.17, x*1.17, y*1.07);
+  triangle(x*1.05,y*1.17, x/1.3, y/1.17, x*1.1, y/1.15);
+  //inner white part
+  fill("white");
+  triangle(x, y/1.4,x/1.2, y*1.15, x*1.15, y*1.03);
+  triangle(x*1.05,y*1.13, x/1.25, y/1.15, x*1.05, y/1.1);
+  
+}
 
 
 function tree(x, y, size){
@@ -100,5 +117,10 @@ function mousePressed(){
   if (mouseButton === CENTER){
     backdrop += 1;
   }
+}
+function keyPressed(){
+  if (keyCode === 32){
+    explosionStatus += 1;
+}
 }
 
