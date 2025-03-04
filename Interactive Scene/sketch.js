@@ -57,6 +57,8 @@ function draw() {
   else{
     explosionStatus = 0;
   }
+  textSize(50)
+  text("Ethan", 850, 475)
 
 }
 
@@ -96,7 +98,6 @@ function explodingVoltorb(x,y){
   fill("white");
   triangle(x, y/1.4,x/1.2, y*1.15, x*1.15, y*1.03);
   triangle(x*1.05,y*1.13, x/1.25, y/1.15, x*1.05, y/1.1);
-  
 }
 
 
@@ -104,8 +105,7 @@ function tree(x, y, size){
   fill("brown");
   rect(x,y,size/6,size*2);
   fill(153,193,79)
-  circle(x,y/2,size*1.4)
-
+  circle(x,y/2,size*1.4);
 }
 
 
