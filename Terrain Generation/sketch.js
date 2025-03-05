@@ -7,7 +7,11 @@ let time;
 let rectWidth = 1;
 let noiseSpeed = 0.01;
 let noiseStart = 1;
-let scrollSpeed = 0.05
+let scrollSpeed = 0.05;
+let peakX;
+let peakY = 0;
+
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -19,18 +23,30 @@ function draw() {
   noiseStart += scrollSpeed;
   background(220);
   generateTerrain();
+
 }
 
 function generateTerrain(){
+  fill("black");
+  stroke("black");
+  peakY = 0;
+  let av = 0;
+  let rep = 0;
+
   for(let x = 0; x<width; x += rectWidth){
     let rectHeight = noise(time);
-    rectHeight = map(rectHeight, 0, 1, 1, 1000);
+    rectHeight = map(rectHeight, 0, 1, 1, 2000);
     rect(x, height, rectWidth, rectHeight);
     time += noiseSpeed;
-    let peakX = x;
-    let peakY = max(rectHeight);
-    drawFlag(x , peakY);
+    av = av + rectHeight;
+    rep++
+    if(peakY < rectHeight){
+      peakY =rectHeight;
+      peakX = x; 
+    }
   }
+  drawFlag(peakX, height-peakY/2);
+  average(av,rep);
 }
 
 function keyPressed(){
@@ -43,5 +59,14 @@ function keyPressed(){
 }
 
 function drawFlag(x,y){
-  rect(x, y, 1, 10)
+  rect(x, y, 2, 40)
+  
+  fill("red")
+  triangle(x,y-10,x,y-20,x+7,y-15)
+}
+function average(av, rep){
+  let avY = (av/rep)/2;
+  stroke("red")
+  line(0, height-avY, width, height-avY);
+
 }
