@@ -6,6 +6,7 @@
 //Global Vars
 let backdrop = 0;
 let explosionStatus = 0;
+const STARS = 8000
 
 function setup() {
   createCanvas(1000, 500);
@@ -22,9 +23,22 @@ function draw() {
     circle(950,50, 300);
   }
   else if(backdrop === 1){ 
-    background(11,94,129);
+    noFill()
+    background("white")
+    stroke("black")
+    noLoop()
+    for(i = 0; i<STARS; i++){
+      let x = random(-10, width+10)
+      let y = random(-10, height+10)
+      let d = random(20,80)
+
+      circle(x,y,d)
+    }
+    noStroke
+
   }
   else if(backdrop === 2){ 
+    loop()
     background(161, 189, 199);
   }
   else if(backdrop === 3){ 
