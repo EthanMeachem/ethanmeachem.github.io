@@ -6,12 +6,14 @@ let myVehicle;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  myVehicle = new Car(1,"red",1,5);
 }
 
 function draw() {
   background(220);
   drawRoad();
-  myVehicle = new Car();
+  myVehicle.move();
+  myVehicle.display();
 }
 
 function drawRoad(){
@@ -42,7 +44,7 @@ function drawTruck(x,y,color){
   rectMode(CENTER);
   fill(color);
   rect(x,y,20, 15);
-  rect(x+12,y, 3, 15)
+  rect(x+12,y, 3, 15);
 
 }
 
@@ -59,22 +61,31 @@ class Car{
     }
   }
 
+  action(){
+    //calls all other functions in class
+
+  }
+
   display(){
+    //0 = car
     if(this.type === 0){
       drawCar(this.x, this.y, this.color);
     }
+    //1 = truck
     else if(this.type === 1){
       drawTruck(this.x, this.y, this.color);
     }
   }
 
   move(){
+    //right
     if(this.direction === 0){
       this.x += this.speed;
       if(this.x > width){
         this.x = 0;
       }
     }
+    //left
     else if(this.direction === 1){
       this.x -= this.speed;
       if(this.x < 0){
@@ -84,6 +95,20 @@ class Car{
   }
 
   speedUp(){
-    
+
+    if(this.speed <= 15){
+      this.speed =+ 1;
+    }
+
+  }
+
+  speedDown(){
+    if(this.speed >= 1){
+      this.speed =- 1;
+    }
+  }
+
+  changeColor(){
+    this.color = color(random(255), random(255), random(255));
   }
 }
