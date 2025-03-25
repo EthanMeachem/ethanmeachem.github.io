@@ -3,18 +3,52 @@
 // 3/21/2025
 
 let myVehicle;
+let eastbound = [];
+let westbound = [];
+let theLight;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   myVehicle = new Car(1,"red",1,5);
+  for(let i = 0; i < 20; i++){
+    let c = color(random(255), random(255), random(255));
+    let w = new Car(floor(random(0,2)), c ,0, floor(random(1,16)));
+    eastbound.push(w);
+  }
+  for(let i = 0; i < 20; i++){
+    let c = color(random(255), random(255), random(255));
+    let w = new Car(floor(random(0,2)), c ,1, floor(random(1,16)));
+    westbound.push(w);
+  }
+  theLight = new Light();
 }
 
 function draw() {
   background(220);
   drawRoad();
-  myVehicle.move();
-  myVehicle.display();
+  for(let currentCar of eastbound){
+    currentCar.action();
+  }
+  for(let currentCar of westbound){
+    currentCar.action();
+  }
+  
 }
+
+//add a car
+function mousePressed(){
+  if(keyIsPressed && keyCode === SHIFT){
+    let c = color(random(255), random(255), random(255));
+    westbound.push(new Car(floor(random(0,2)), c ,1, floor(random(1,16))));
+  }
+  else{
+    let c = color(random(255), random(255), random(255));
+    eastbound.push(new Car(floor(random(0,2)), c ,0, floor(random(1,16))));
+  }
+}
+// red light
+
+
 
 function drawRoad(){
   rectMode(CORNER);
@@ -57,13 +91,25 @@ class Car{
     }
     //backwards
     else if(this.direction === 1){
-      this.x = width; this.y = height/2 - random(0,190)
+      this.x = width; this.y = height/2 - random(0,190);
     }
   }
 
   action(){
     //calls all other functions in class
-
+    if(theLight.lightColor === "green"){
+      this.move();
+    }
+    if(floor(random(100)) === 1){
+      this.speedUp();
+    }
+    if(floor(random(100)) === 1){
+      this.speedDown();
+    }
+    if(floor(random(100)) === 1){
+      this.changeColor();
+    }
+    this.display();
   }
 
   display(){
@@ -97,18 +143,44 @@ class Car{
   speedUp(){
 
     if(this.speed <= 15){
-      this.speed =+ 1;
+      this.speed += 1;
     }
 
   }
 
   speedDown(){
     if(this.speed >= 1){
-      this.speed =- 1;
+      this.speed -= 1;
     }
   }
 
   changeColor(){
     this.color = color(random(255), random(255), random(255));
+  }
+}
+
+class Light{
+  constructor(){
+    this.lightColor = "green"; this.countDown = 0;
+  }
+
+  display(){
+    if(this.countDown < 0){
+      this.lightColor = "green";
+    }
+    rectMode(CENTER);
+    fill("yellow");
+    square(width/2, 200,50);
+    fill(this.lightColor);
+    circle(width/2, 200, 30);
+    this.countDown -= 1;
+  }
+
+  redLight(){
+// (light changed to red when space is pressed)
+    this.lightColor = "red";
+//change back after 120 frames
+    this.countDown = 120;
+    
   }
 }
