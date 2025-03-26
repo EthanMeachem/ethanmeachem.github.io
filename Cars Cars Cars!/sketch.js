@@ -2,7 +2,19 @@
 // Ethan Meachem
 // 3/21/2025
 
-let myVehicle;
+//controls
+//Shift left-click summons westbound car
+//left-click summons eastbound car
+//space makes light red for approx. 2 seconds
+
+
+
+
+
+
+
+
+
 let eastbound = [];
 let westbound = [];
 let theLight;
@@ -32,7 +44,7 @@ function draw() {
   for(let currentCar of westbound){
     currentCar.action();
   }
-  
+  theLight.display();
 }
 
 //add a car
@@ -46,9 +58,13 @@ function mousePressed(){
     eastbound.push(new Car(floor(random(0,2)), c ,0, floor(random(1,16))));
   }
 }
+
 // red light
-
-
+function keyPressed(){ 
+  if(keyCode === 32){
+    theLight.redLight();
+  }
+}
 
 function drawRoad(){
   rectMode(CORNER);
@@ -124,14 +140,14 @@ class Car{
   }
 
   move(){
-    //right
+    //right = 0
     if(this.direction === 0){
       this.x += this.speed;
       if(this.x > width){
         this.x = 0;
       }
     }
-    //left
+    //left = 1
     else if(this.direction === 1){
       this.x -= this.speed;
       if(this.x < 0){
@@ -170,9 +186,9 @@ class Light{
     }
     rectMode(CENTER);
     fill("yellow");
-    square(width/2, 200,50);
+    square(width/2, 150,50);
     fill(this.lightColor);
-    circle(width/2, 200, 30);
+    circle(width/2, 150, 30);
     this.countDown -= 1;
   }
 
