@@ -4,16 +4,22 @@
 
 
 let grid = 
-[[0, 0, 255, 255, 0],
- [255, 255, 0, 255, 0],
- [0, 0, 0, 255, 0  ]];
+[[0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0]];
+
+ //array for green overlay
+ let gridOverlay =
+ [[0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0]];
 
 let squareSize = 80;
 const NUM_ROWS = 3; const NUM_COLS = 5; 
 
 function setup() {
   createCanvas(NUM_COLS*squareSize, NUM_ROWS*squareSize);
-  console.log("Make the squares white");
+  console.log("Make the squares all white or all black!");
   renderGrid();
   gridSetup();
 }
@@ -36,6 +42,7 @@ function getCurrentX(){
   let constrainedX = constrain(mouseX,0,width-1);
   return floor(constrainedX/squareSize);
 }
+
 //finds win con, changes colors
 function mousePressed(){
   let x = getCurrentX(); 
@@ -55,15 +62,43 @@ function mousePressed(){
     console.log("YOU WIN!!!!!!!!");
   }
 }
-//win condition (learned how to use every but still
-//dont understand =>)
+//win condition (learned how to use every)
 function winCon(grid){
-  return grid.every(row => row.every(num => num === 255));
+  if(grid.every(row => row.every(num => num === 0))){
+    return true;
+  }
+  else if(grid.every(row => row.every(num => num === 255))){
+    return true;
+  }
 }
 
 function draw() {
   background(220);
   renderGrid();
+  renderOverlay();
+}
+
+
+function renderOverlay(){
+//displays the overlay
+  for(let y = 0; y < NUM_ROWS; y++){
+    for(let x = 0; x < NUM_COLS; x++){
+      if(gridOverlay[y][x] === 1){
+        fill(0,255,0,50);
+        rect(x*squareSize, y*squareSize,squareSize);
+        gridOverlay[y][x] = 0;
+      }
+    }
+  }
+  //updates the overlay
+  let gx = getCurrentX();
+  let gy = getCurrentY();
+  gridOverlay[gy][gx] = 1;
+  if(gy>0) gridOverlay[gy-1][gx] = 1;
+  if(gy<NUM_ROWS-1)  gridOverlay[gy+1][gx] = 1;
+  if(gx<NUM_COLS-1) gridOverlay[gy][gx+1] = 1;
+  if(gx>0) gridOverlay[gy][gx-1] = 1; 
+    
 }
 
 //changes 0 to 255 vise versa
