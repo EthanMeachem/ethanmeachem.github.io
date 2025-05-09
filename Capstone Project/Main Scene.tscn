@@ -1,6 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=9 format=3 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
+[ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
+shader = ExtResource("2_2uwcf")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.272
+shader_parameter/scanlines_width = 0.074
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(8000, 6000)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 31.677
+shader_parameter/roll_variation = 0.704
+shader_parameter/distort_intensity = 0.011
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.139
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.797
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1kcfc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,6 +47,15 @@ size = Vector2(10, 10)
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="CrtShader" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_t0tp6")
+offset_right = 320.0
+offset_bottom = 241.0
+mouse_filter = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7vya7")
