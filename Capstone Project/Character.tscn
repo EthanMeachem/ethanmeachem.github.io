@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://71dty86n53il"]
+
+[ext_resource type="Script" uid="uid://bm2kks3y0tw6h" path="res://character.gd" id="1_oolk3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tpva7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7j0m"]
+
+[node name="Character" type="RigidBody3D"]
+lock_rotation = true
+linear_damp = 3.0
+script = ExtResource("1_oolk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tpva7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m7j0m")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
