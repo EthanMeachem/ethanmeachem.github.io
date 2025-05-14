@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=14 format=3 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
 [ext_resource type="Script" uid="uid://cu586mohycpw2" path="res://Interact/Interactable.gd" id="2_ww3rf"]
+[ext_resource type="PackedScene" uid="uid://dees3q7kse36e" path="res://assets/Foliage/tree_4.tscn" id="4_ww3rf"]
+[ext_resource type="PackedScene" uid="uid://d1sge0o3pmn4b" path="res://assets/Foliage/tree_2.tscn" id="5_h4phd"]
+[ext_resource type="PackedScene" uid="uid://jilfex2mi8dm" path="res://assets/Foliage/tree_3.tscn" id="6_0ejt0"]
+[ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/tree_1.tscn" id="7_pey1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")
@@ -77,3 +81,15 @@ shape = SubResource("ConcavePolygonShape3D_nxxrv")
 
 [node name="Character" parent="." instance=ExtResource("1_h7pfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982908, 0)
+
+[node name="tree4" parent="." instance=ExtResource("4_ww3rf")]
+transform = Transform3D(0.499535, 0, 0, 0, 0.499535, 0, 0, 0, 0.499535, 3.1418, -0.141832, 0.386678)
+
+[node name="Tree2" parent="." instance=ExtResource("5_h4phd")]
+transform = Transform3D(0.500947, 0, 0, 0, 0.500947, 0, 0, 0, 0.500947, -3.42801, -0.00387307, -3.02951)
+
+[node name="Tree3" parent="." instance=ExtResource("6_0ejt0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0111988, 0.00767109, -4.46426)
+
+[node name="Tree1" parent="." instance=ExtResource("7_pey1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2028, 0.00235536, 2.26523)
