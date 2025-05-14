@@ -23,7 +23,8 @@ func _process(delta):
 		
 	twist_pivot.rotate_y(twist_input)
 	pitch_pivot.rotate_x(pitch_input)
-	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, -0.9, 0.9)
+	#y axis max head tilt
+	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, -1.5, 0.9)
 	twist_input = 0.0
 	pitch_input = 0.0
 

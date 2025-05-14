@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://71dty86n53il"]
+[gd_scene load_steps=5 format=3 uid="uid://71dty86n53il"]
 
 [ext_resource type="Script" uid="uid://bm2kks3y0tw6h" path="res://character.gd" id="1_oolk3"]
+[ext_resource type="PackedScene" uid="uid://cfbps6sct7htt" path="res://Interact/Interact.tscn" id="2_7ig0a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tpva7"]
 
@@ -23,3 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+
+[node name="Interact" parent="TwistPivot/PitchPivot" instance=ExtResource("2_7ig0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749453)
