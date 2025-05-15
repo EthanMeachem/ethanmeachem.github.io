@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmb2kd6w8ul33"
-path.s3tc="res://.godot/imported/LowPoly Trees_TexturesCom_Branches0014_1_masked_S.png-63ec7cbfb06111ded19b4fdd829628ee.s3tc.ctex"
+uid="uid://de0p13xqrdm22"
+path.s3tc="res://.godot/imported/LowPoly Trees_birch_roughness.png-98dd088164fc18c340969e733e80dbbb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "33bac2c0904112dc2dec05de1bf810ff"
+"md5": "c0e1a8c49334ccf942ee0549cd8782f2"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_TexturesCom_Branches0014_1_masked_S.png"
-dest_files=["res://.godot/imported/LowPoly Trees_TexturesCom_Branches0014_1_masked_S.png-63ec7cbfb06111ded19b4fdd829628ee.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_birch_roughness.png"
+dest_files=["res://.godot/imported/LowPoly Trees_birch_roughness.png-98dd088164fc18c340969e733e80dbbb.s3tc.ctex"]
 
 [params]
 

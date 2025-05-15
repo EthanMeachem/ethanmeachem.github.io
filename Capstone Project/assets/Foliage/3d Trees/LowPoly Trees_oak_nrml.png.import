@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j1w10jqjc675"
-path.s3tc="res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png-adf6dd1ce1b753480813b1fa8c6df535.s3tc.ctex"
+uid="uid://ni0vhogymm81"
+path.s3tc="res://.godot/imported/LowPoly Trees_oak_nrml.png-8b8f3bb00ddbec3821e6e97f7d8af2ec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c94d0126c0b22cce06eb9906d9ba0439"
+"md5": "1f3bedc7e196ce64cc535efac0611eb1"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png"
-dest_files=["res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png-adf6dd1ce1b753480813b1fa8c6df535.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_oak_nrml.png"
+dest_files=["res://.godot/imported/LowPoly Trees_oak_nrml.png-8b8f3bb00ddbec3821e6e97f7d8af2ec.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/Foliage/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png"
+roughness/src_normal="res://assets/Foliage/3d Trees/LowPoly Trees_oak_nrml.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

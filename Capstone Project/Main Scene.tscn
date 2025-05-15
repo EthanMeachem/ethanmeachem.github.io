@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
 [ext_resource type="Script" uid="uid://cu586mohycpw2" path="res://Interact/Interactable.gd" id="2_ww3rf"]
-[ext_resource type="PackedScene" uid="uid://dees3q7kse36e" path="res://assets/Foliage/tree_4.tscn" id="4_ww3rf"]
-[ext_resource type="PackedScene" uid="uid://d1sge0o3pmn4b" path="res://assets/Foliage/tree_2.tscn" id="5_h4phd"]
-[ext_resource type="PackedScene" uid="uid://jilfex2mi8dm" path="res://assets/Foliage/tree_3.tscn" id="6_0ejt0"]
-[ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/tree_1.tscn" id="7_pey1u"]
+[ext_resource type="PackedScene" uid="uid://dees3q7kse36e" path="res://assets/Foliage/3d Trees/tree_4.tscn" id="4_ww3rf"]
+[ext_resource type="PackedScene" uid="uid://d1sge0o3pmn4b" path="res://assets/Foliage/3d Trees/tree_2.tscn" id="5_h4phd"]
+[ext_resource type="PackedScene" uid="uid://jilfex2mi8dm" path="res://assets/Foliage/3d Trees/tree_3.tscn" id="6_0ejt0"]
+[ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/3d Trees/tree_1.tscn" id="7_pey1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")

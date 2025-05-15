@@ -1,20 +1,24 @@
 [gd_scene load_steps=12 format=4 uid="uid://blq3ityg62cib"]
 
-[ext_resource type="Texture2D" uid="uid://hnoob8br2ngd" path="res://assets/Foliage/LowPoly Trees_tree_albedo.png" id="1_vsr56"]
-[ext_resource type="Texture2D" uid="uid://bop8i4yhsbqux" path="res://assets/Foliage/LowPoly Trees_tree_roughness.png" id="2_3143s"]
-[ext_resource type="Texture2D" uid="uid://063cgk71qr0i" path="res://assets/Foliage/LowPoly Trees_tree_normal.png" id="3_12w3w"]
-[ext_resource type="Texture2D" uid="uid://dmb2kd6w8ul33" path="res://assets/Foliage/LowPoly Trees_TexturesCom_Branches0014_1_masked_S.png" id="4_isdu8"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dqhjp"]
+load_path = "res://.godot/imported/LowPoly Trees_tree_albedo.png-cfe5a2dd5df1987cde1cb7913424198e.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50s5c"]
+load_path = "res://.godot/imported/LowPoly Trees_tree_roughness.png-32afa39b383b3bf0cee11f697fdf81d2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5vva1"]
+load_path = "res://.godot/imported/LowPoly Trees_tree_normal.png-c9d1c0705e12c3382d6802991ef32c66.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olwe0"]
 resource_name = "bark"
 cull_mode = 2
-albedo_texture = ExtResource("1_vsr56")
-metallic_texture = ExtResource("2_3143s")
+albedo_texture = SubResource("CompressedTexture2D_dqhjp")
+metallic_texture = SubResource("CompressedTexture2D_50s5c")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_3143s")
+roughness_texture = SubResource("CompressedTexture2D_50s5c")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("3_12w3w")
+normal_texture = SubResource("CompressedTexture2D_5vva1")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6vi5d"]
 _surfaces = [{
@@ -50,10 +54,14 @@ shadow_mesh = SubResource("ArrayMesh_6vi5d")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vsr56"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6n5jk"]
+load_path = "res://.godot/imported/LowPoly Trees_TexturesCom_Branches0014_1_masked_S.png-0b531e80a09de44209ac8df6c8050f3e.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k55lt"]
 resource_name = "Leaf"
 transparency = 4
-albedo_texture = ExtResource("4_isdu8")
+albedo_texture = SubResource("CompressedTexture2D_6n5jk")
+metallic_specular = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q5845"]
 _surfaces = [{
@@ -90,6 +98,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q5845")
 
 [node name="Tree1" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.315293, 0, 0, 0, 0.315293, 0, 0, 0, 0.315293, 0, 0, 0.0172195)
@@ -100,10 +109,11 @@ skeleton = NodePath("")
 transform = Transform3D(2.14973, 0, 0, 0, 1, 0, 0, 0, 1.88543, -0.180872, -0.0428729, 0.0461012)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D"]
-transform = Transform3D(0.996394, 0, 0, 0, 2.38979, 0, 0, 0, 0.996394, 0, 2.53223, 0)
+transform = Transform3D(1.21134, 0, 0, 0, 4.56105, 0, 0, 0, 0.996394, -0.163711, 4.61826, 0)
 shape = SubResource("CylinderShape3D_vsr56")
 
 [node name="Plane_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.85272, 0.3151, 0.1083, -0.438789, 0.838825, -0.496497, -0.485928, 0.443943, 0.861256, -1.02178, 6.85691, -0.0454178)
+cast_shadow = 2
 mesh = SubResource("ArrayMesh_jopvq")
 skeleton = NodePath("")

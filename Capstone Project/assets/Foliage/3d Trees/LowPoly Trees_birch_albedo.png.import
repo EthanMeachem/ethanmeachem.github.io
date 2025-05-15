@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc1yc4ajnl6t"
-path.s3tc="res://.godot/imported/LowPoly Trees_birch_albedo.png-6c3947b1ecc0af16a4a963e7260fef62.s3tc.ctex"
+uid="uid://dcdxy8luoj6fl"
+path.s3tc="res://.godot/imported/LowPoly Trees_birch_albedo.png-b99af45d3c59081881f22a2f0df99939.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_birch_albedo.png"
-dest_files=["res://.godot/imported/LowPoly Trees_birch_albedo.png-6c3947b1ecc0af16a4a963e7260fef62.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_birch_albedo.png"
+dest_files=["res://.godot/imported/LowPoly Trees_birch_albedo.png-b99af45d3c59081881f22a2f0df99939.s3tc.ctex"]
 
 [params]
 

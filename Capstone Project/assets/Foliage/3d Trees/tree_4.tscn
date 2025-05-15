@@ -1,21 +1,25 @@
 [gd_scene load_steps=13 format=4 uid="uid://dees3q7kse36e"]
 
-[ext_resource type="Texture2D" uid="uid://duc1yc4ajnl6t" path="res://assets/Foliage/LowPoly Trees_birch_albedo.png" id="1_27nhs"]
-[ext_resource type="Texture2D" uid="uid://c33yh8langx1b" path="res://assets/Foliage/LowPoly Trees_birch_roughness.png" id="2_8kb6q"]
-[ext_resource type="Texture2D" uid="uid://dr3fpfhi3juyv" path="res://assets/Foliage/LowPoly Trees_birch_nrml2.png" id="3_lllcw"]
-[ext_resource type="Texture2D" uid="uid://c5dllmdjchxep" path="res://assets/Foliage/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png" id="4_dw3kp"]
-[ext_resource type="Texture2D" uid="uid://j1w10jqjc675" path="res://assets/Foliage/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png" id="5_ckh4i"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p4wct"]
+load_path = "res://.godot/imported/LowPoly Trees_birch_albedo.png-c8e842410aeaaa33819b5c8a1cc8cb89.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k5dbf"]
+load_path = "res://.godot/imported/LowPoly Trees_birch_roughness.png-8ac88f7709a14e5350ca8e621a8f7419.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_muuq0"]
+load_path = "res://.godot/imported/LowPoly Trees_birch_nrml2.png-1eba3f98ec1f5c7b5f6f1ec61f849df4.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_op6ad"]
 resource_name = "birch"
 cull_mode = 2
-albedo_texture = ExtResource("1_27nhs")
-metallic_texture = ExtResource("2_8kb6q")
+albedo_texture = SubResource("CompressedTexture2D_p4wct")
+metallic_specular = 0.0
+metallic_texture = SubResource("CompressedTexture2D_k5dbf")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_8kb6q")
+roughness_texture = SubResource("CompressedTexture2D_k5dbf")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("3_lllcw")
+normal_texture = SubResource("CompressedTexture2D_muuq0")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xmkyy"]
 _surfaces = [{
@@ -53,14 +57,21 @@ shadow_mesh = SubResource("ArrayMesh_xmkyy")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dcga1"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8cdju"]
+load_path = "res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png-da28255bccd18e8180fea9e59ac523cf.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qon0j"]
+load_path = "res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png-b522b0b1c83ce6119a6ec64247dfb02f.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8igv0"]
 resource_name = "TexturesCom_Tree_BeechBranch01_512_albedo"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("4_dw3kp")
-roughness = 0.5
+albedo_texture = SubResource("CompressedTexture2D_8cdju")
+metallic_specular = 0.55
+roughness = 0.56
 normal_enabled = true
-normal_texture = ExtResource("5_ckh4i")
+normal_texture = SubResource("CompressedTexture2D_qon0j")
 texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rs8su"]

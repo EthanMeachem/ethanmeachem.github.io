@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5dllmdjchxep"
-path.s3tc="res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png-24454278d2b5eb07985bc45b62b0167a.s3tc.ctex"
+uid="uid://dp04dbq2mc1vg"
+path.s3tc="res://.godot/imported/LowPoly Trees_oak_roughness.png-24567318a32c64af721e26f57fda2613.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "624e8775c5482a62c3e4ee14ed5e71b2"
+"md5": "24e6de6b2f36e34ece0da9ac2dc0324f"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png"
-dest_files=["res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png-24454278d2b5eb07985bc45b62b0167a.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_oak_roughness.png"
+dest_files=["res://.godot/imported/LowPoly Trees_oak_roughness.png-24567318a32c64af721e26f57fda2613.s3tc.ctex"]
 
 [params]
 

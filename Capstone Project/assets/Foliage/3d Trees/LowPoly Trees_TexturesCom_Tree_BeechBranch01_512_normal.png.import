@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr3fpfhi3juyv"
-path.s3tc="res://.godot/imported/LowPoly Trees_birch_nrml2.png-dd50fea01b453b998f7a83428efea76e.s3tc.ctex"
+uid="uid://bpihvqdlv605h"
+path.s3tc="res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png-092ebf9609ac34265ce853cb076a2489.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d38180472cf015d978409869751d290c"
+"md5": "c94d0126c0b22cce06eb9906d9ba0439"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_birch_nrml2.png"
-dest_files=["res://.godot/imported/LowPoly Trees_birch_nrml2.png-dd50fea01b453b998f7a83428efea76e.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png"
+dest_files=["res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png-092ebf9609ac34265ce853cb076a2489.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/Foliage/LowPoly Trees_birch_nrml2.png"
+roughness/src_normal="res://assets/Foliage/3d Trees/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

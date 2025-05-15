@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://063cgk71qr0i"
-path.s3tc="res://.godot/imported/LowPoly Trees_tree_normal.png-0dc424566d520348806e1bd72224d52d.s3tc.ctex"
+uid="uid://cei6j2ay2qews"
+path.s3tc="res://.godot/imported/LowPoly Trees_tree_roughness.png-7ee87380f378b44537fc9caa2e5733ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4dc0a55f41a78a2f34ee3743d9a3a154"
+"md5": "cf7ff5b25255f947aec8bca89ea23160"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_tree_normal.png"
-dest_files=["res://.godot/imported/LowPoly Trees_tree_normal.png-0dc424566d520348806e1bd72224d52d.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_tree_roughness.png"
+dest_files=["res://.godot/imported/LowPoly Trees_tree_roughness.png-7ee87380f378b44537fc9caa2e5733ba.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://assets/Foliage/LowPoly Trees_tree_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

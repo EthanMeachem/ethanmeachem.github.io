@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bop8i4yhsbqux"
-path.s3tc="res://.godot/imported/LowPoly Trees_tree_roughness.png-84c452b5bfa78f032d8f9d9acfbb2644.s3tc.ctex"
+uid="uid://clfu3ya6oxjuu"
+path.s3tc="res://.godot/imported/LowPoly Trees_tree_albedo.png-5846791072c8c3a80da2a3ab21ddec5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cf7ff5b25255f947aec8bca89ea23160"
+"md5": "562eed796e9887d92900c85015bac007"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_tree_roughness.png"
-dest_files=["res://.godot/imported/LowPoly Trees_tree_roughness.png-84c452b5bfa78f032d8f9d9acfbb2644.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_tree_albedo.png"
+dest_files=["res://.godot/imported/LowPoly Trees_tree_albedo.png-5846791072c8c3a80da2a3ab21ddec5b.s3tc.ctex"]
 
 [params]
 

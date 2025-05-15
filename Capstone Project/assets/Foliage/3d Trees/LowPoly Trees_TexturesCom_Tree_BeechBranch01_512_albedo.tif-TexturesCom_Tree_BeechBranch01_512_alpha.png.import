@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6f5kj0greagj"
-path.s3tc="res://.godot/imported/LowPoly Trees_Tree Branch.png-dd6b4ec3cf9a21ff7c9391631abf4acf.s3tc.ctex"
+uid="uid://bj3uyi0qc6ul6"
+path.s3tc="res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png-ff1e779d83343e3182cb2c234eca8cba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "61c1d23116b684371c28378537871d1f"
+"md5": "624e8775c5482a62c3e4ee14ed5e71b2"
 }
 
 [deps]
 
-source_file="res://assets/Foliage/LowPoly Trees_Tree Branch.png"
-dest_files=["res://.godot/imported/LowPoly Trees_Tree Branch.png-dd6b4ec3cf9a21ff7c9391631abf4acf.s3tc.ctex"]
+source_file="res://assets/Foliage/3d Trees/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png"
+dest_files=["res://.godot/imported/LowPoly Trees_TexturesCom_Tree_BeechBranch01_512_albedo.tif-TexturesCom_Tree_BeechBranch01_512_alpha.png-ff1e779d83343e3182cb2c234eca8cba.s3tc.ctex"]
 
 [params]
 
