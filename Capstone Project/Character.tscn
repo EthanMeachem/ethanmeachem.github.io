@@ -7,9 +7,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7j0m"]
 
-[node name="Character" type="RigidBody3D"]
-lock_rotation = true
-linear_damp = 3.0
+[node name="Character" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+floor_snap_length = 0.2
 script = ExtResource("1_oolk3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -24,6 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+current = true
 
 [node name="Interact" parent="TwistPivot/PitchPivot" instance=ExtResource("2_7ig0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749453)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=16 format=3 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jilfex2mi8dm" path="res://assets/Foliage/3d Trees/tree_3.tscn" id="6_0ejt0"]
 [ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/3d Trees/tree_1.tscn" id="7_pey1u"]
 [ext_resource type="PackedScene" uid="uid://daqdlfh5ktja8" path="res://assets/ModularHouse/modular_house.tscn" id="8_0ejt0"]
+[ext_resource type="PackedScene" uid="uid://c6on4s05ylbhg" path="res://terrain.tscn" id="9_pey1u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")
@@ -34,8 +35,9 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.797
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1kcfc"]
-sky_top_color = Color(0.124895, 0.161193, 0.238414, 1)
+sky_top_color = Color(0, 0, 0, 1)
 sky_horizon_color = Color(0.0348, 0.132627, 0.29, 1)
+sky_curve = 0.621159
 sky_energy_multiplier = 0.44
 ground_horizon_color = Color(0.20218, 0.398032, 0.54247, 1)
 ground_energy_multiplier = 0.1
@@ -86,9 +88,6 @@ script = ExtResource("2_ww3rf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nxxrv")
 
-[node name="Character" parent="." instance=ExtResource("1_h7pfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982908, 0)
-
 [node name="tree4" parent="." instance=ExtResource("4_ww3rf")]
 transform = Transform3D(0.499535, 0, 0, 0, 0.499535, 0, 0, 0, 0.499535, -20.8011, -0.141832, 0.386678)
 
@@ -103,5 +102,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4751, 0.00235536, 7.03621
 
 [node name="ModularHouse" parent="." instance=ExtResource("8_0ejt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5158, 0, -28.2465)
+
+[node name="Terrain" parent="." instance=ExtResource("9_pey1u")]
+transform = Transform3D(-3.50739, 0, -99.9385, 0, 100, 0, 99.9385, 0, -3.50739, 321.783, -62.5945, 0)
+
+[node name="Character" parent="." instance=ExtResource("1_h7pfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02381, 0)
+wall_min_slide_angle = 0.0
 
 [editable path="ModularHouse"]
