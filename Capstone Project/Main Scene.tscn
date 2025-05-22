@@ -104,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4751, 0.00235536, 7.03621
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5158, 0, -28.2465)
 
 [node name="Terrain" parent="." instance=ExtResource("9_pey1u")]
-transform = Transform3D(-3.50739, 0, -99.9385, 0, 100, 0, 99.9385, 0, -3.50739, 321.783, -62.5945, 0)
+transform = Transform3D(-3.15665, 0, -89.9446, 0, 90, 0, 89.9446, 0, -3.15665, 289.403, -62.5945, 0)
 
 [node name="Character" parent="." instance=ExtResource("1_h7pfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02381, 0)
