@@ -29,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 current = true
 
 [node name="Interact" parent="TwistPivot/PitchPivot" instance=ExtResource("2_7ig0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749453)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.405573, 0, 0, -0.749453)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="TwistPivot/PitchPivot"]
 light_energy = 1.5

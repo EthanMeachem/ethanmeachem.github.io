@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=22 format=4 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/3d Trees/tree_1.tscn" id="7_pey1u"]
 [ext_resource type="PackedScene" uid="uid://daqdlfh5ktja8" path="res://assets/ModularHouse/modular_house.tscn" id="8_0ejt0"]
 [ext_resource type="PackedScene" uid="uid://c6on4s05ylbhg" path="res://terrain.tscn" id="9_pey1u"]
+[ext_resource type="PackedScene" uid="uid://047wachfpk6q" path="res://assets/HouseExterior/Actual Scene/abandoned_house.tscn" id="10_3e0ao"]
+[ext_resource type="Texture2D" uid="uid://bsslggqej0j16" path="res://assets/HouseExterior/Abandoned_House_Puerta.png" id="11_q4pxk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")
@@ -64,6 +66,48 @@ size = Vector2(10, 10)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nxxrv"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62xuj"]
+resource_name = "Puerta"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("11_q4pxk")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4b80f"]
+_surfaces = [{
+"aabb": AABB(-0.879903, -0.978776, -0.0225343, 0.874354, 2.13101, 0.0450685),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "Puerta",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAAAA/////wAA////////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_14f5m"]
+resource_name = "Abandoned_House_Plane_066"
+lightmap_size_hint = Vector2i(70, 62)
+_surfaces = [{
+"aabb": AABB(-0.879903, -0.978776, -0.0225343, 0.874354, 2.13101, 0.0450685),
+"attribute_data": PackedByteArray("7JiAP8jBAj/jK34/OudcP7I2mbt9efo+vuJrP9da6z7smIA/fXn6Pr7iaz8651w/sjaZu8jBAj/jK34/11rrPuyYgD/IwQI/4yt+P6WU0j6yNpm7fXn6Pr7iaz8IIQQ8sjaZu8jBAj/jK34/CCEEPOyYgD99efo+vuJrP6WU0j6mpwY/lDCBPzuoQz98730/gqvyPmioGLyhDuo7U0ppP4Kr8j6UMIE/O6hDP1NKaT+mpwY/aKgYvKEO6jt8730/gqvyPpQwgT/qoE4/CCEEPKanBj9oqBi8D+pgPzrnXD+mpwY/lDCBPw/qYD8IIQQ8gqvyPmioGLzqoE4/OudcP7I2mbuUMIE/B3XQPgghBDzsmIA/aKgYvDuoQz8651w/7JiAP5QwgT87qEM/CCEEPLI2mbtoqBi8B3XQPjrnXD/smIA/lDCBP6iDuj4IIQQ8sjaZu2ioGLyhDuo7OudcP7I2mbuUMIE/oQ7qOwghBDzsmIA/aKgYvKiDuj4651w/"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_62xuj"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("VEFhvwuRer/Embg8ANS1uwuRer/Embi8VEFhvwuRer/Embi8ANS1uwuRer/Embg8VEFhv4p8kz/Embg8ANS1u4p8kz/Embi8ANS1u4p8kz/Embg8VEFhv4p8kz/Embi8ANS1uwuRer/Embg8ANS1u4p8kz/Embi8ANS1uwuRer/Embi8ANS1u4p8kz/Embg8VEFhvwuRer/Embi8VEFhv4p8kz/Embg8VEFhvwuRer/Embg8VEFhv4p8kz/Embi8ANS1uwuRer/Embi8VEFhv4p8kz/Embi8VEFhvwuRer/Embi8ANS1u4p8kz/Embi8VEFhvwuRer/Embg8ANS1u4p8kz/Embg8ANS1uwuRer/Embg8VEFhv4p8kz/Embg8+n8BAAEAAMD6fwEAAQAAwPp/AQABAADA+n8BAAEAAMD+f/7/AAAAQP5//v8AAABA/n/+/wAAAED+f/7/AAAAQP7//n//fwBA/v/+f/9/AED+//5//38AQP7//n//fwBAAQD/fwCA/78BAP9/AID/vwEA/38AgP+/AQD/fwCA/7/+/wAAAAD/v/7/AAAAAP+//v8AAAAA/7/+/wAAAAD/v/5//n8AAP8//n/+fwAA/z/+f/5/AAD/P/5//n8AAP8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4b80f")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nul8a"]
+data = PackedVector3Array(-0.8799, -0.9788, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, -0.9788, -0.0225, -0.8799, -0.9788, 0.0225, -0.0055, -0.9788, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, 1.1522, 0.0225, -0.0055, 1.1522, -0.0225, -0.0055, 1.1522, 0.0225, -0.8799, 1.1522, 0.0225, -0.8799, 1.1522, -0.0225, -0.0055, 1.1522, -0.0225, -0.0055, -0.9788, 0.0225, -0.0055, 1.1522, -0.0225, -0.0055, -0.9788, -0.0225, -0.0055, -0.9788, 0.0225, -0.0055, 1.1522, 0.0225, -0.0055, 1.1522, -0.0225, -0.8799, -0.9788, -0.0225, -0.8799, 1.1522, 0.0225, -0.8799, -0.9788, 0.0225, -0.8799, -0.9788, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, 1.1522, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, -0.9788, -0.0225, -0.0055, -0.9788, -0.0225, -0.0055, 1.1522, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, -0.9788, 0.0225, -0.0055, 1.1522, 0.0225, -0.0055, -0.9788, 0.0225, -0.8799, -0.9788, 0.0225, -0.8799, 1.1522, 0.0225, -0.0055, 1.1522, 0.0225)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -107,7 +151,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5158, 0, -28.2465)
 transform = Transform3D(-3.15665, 0, -89.9446, 0, 90, 0, 89.9446, 0, -3.15665, 289.403, -62.5945, 0)
 
 [node name="Character" parent="." instance=ExtResource("1_h7pfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02381, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 511.925, -1.6642, 0)
 wall_min_slide_angle = 0.0
 
+[node name="Abandoned_House" parent="." instance=ExtResource("10_3e0ao")]
+transform = Transform3D(0.0163568, 0, -1.19989, 0, 1.2, 0, 1.19989, 0, 0.0163568, 527.532, -2.41156, -7.54576)
+
+[node name="Puerta" parent="Abandoned_House/HOUSE DO NOT DELETE" index="2"]
+transform = Transform3D(-1.09373, -1.11022e-16, 0, 0, 1.02483, -8.74228e-08, 0, 8.95937e-08, 1, 6.88589, -2.32892, 8.28433)
+mesh = SubResource("ArrayMesh_14f5m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE/Puerta" index="0"]
+script = ExtResource("2_ww3rf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/HOUSE DO NOT DELETE/Puerta/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nul8a")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Abandoned_House/HOUSE DO NOT DELETE/Puerta" index="1"]
+transform = Transform3D(-0.758975, 5.90561e-09, 0.0669277, -6.3994e-09, 0.833333, -1.46103e-07, -0.0732006, -1.461e-07, -0.830112, -0.26503, -1.19209e-07, -1.35172)
+
 [editable path="ModularHouse"]
+[editable path="Abandoned_House"]
