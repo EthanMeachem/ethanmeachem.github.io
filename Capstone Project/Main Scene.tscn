@@ -1,7 +1,8 @@
-[gd_scene load_steps=122 format=4 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=121 format=4 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
+[ext_resource type="Script" uid="uid://cu586mohycpw2" path="res://Interact/Interactable.gd" id="2_lk0i1"]
 [ext_resource type="AudioStream" uid="uid://cuqldblssj1hy" path="res://assets/Audio/door_open.wav" id="3_lk0i1"]
 [ext_resource type="PackedScene" uid="uid://dees3q7kse36e" path="res://assets/Foliage/3d Trees/tree_4.tscn" id="4_ww3rf"]
 [ext_resource type="PackedScene" uid="uid://d1sge0o3pmn4b" path="res://assets/Foliage/3d Trees/tree_2.tscn" id="5_h4phd"]
@@ -13,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://do1c3oylq2nq0" path="res://assets/HouseExterior/Abandoned_House_Untitled.png" id="11_lk0i1"]
 [ext_resource type="Texture2D" uid="uid://bsslggqej0j16" path="res://assets/HouseExterior/Abandoned_House_Puerta.png" id="11_q4pxk"]
 [ext_resource type="Texture2D" uid="uid://chnpkmuk53ams" path="res://assets/HouseExterior/Abandoned_House_Ladrillos.jpg" id="12_2jsji"]
-[ext_resource type="Script" uid="uid://dqsfr024ad38r" path="res://door.gd" id="12_14f5m"]
 [ext_resource type="Texture2D" uid="uid://d2glmvdgjyqgo" path="res://assets/HouseExterior/Abandoned_House_Cuar2.jpg" id="13_ffnbw"]
 [ext_resource type="Texture2D" uid="uid://dvywgi65voqi6" path="res://assets/HouseExterior/Abandoned_House_Madera5.jpg" id="14_yqckd"]
 [ext_resource type="Texture2D" uid="uid://bxnopxvmu2v0j" path="res://assets/HouseExterior/Abandoned_House_Techo.png" id="15_0hrw6"]
@@ -73,9 +73,6 @@ volumetric_fog_sky_affect = 0.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g5brm"]
 size = Vector2(10, 10)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nxxrv"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t6hn"]
 resource_name = "Madera4.001"
@@ -585,7 +582,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4b80f")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nul8a"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ii763"]
 data = PackedVector3Array(-0.8799, -0.9788, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, -0.9788, -0.0225, -0.8799, -0.9788, 0.0225, -0.0055, -0.9788, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, 1.1522, 0.0225, -0.0055, 1.1522, -0.0225, -0.0055, 1.1522, 0.0225, -0.8799, 1.1522, 0.0225, -0.8799, 1.1522, -0.0225, -0.0055, 1.1522, -0.0225, -0.0055, -0.9788, 0.0225, -0.0055, 1.1522, -0.0225, -0.0055, -0.9788, -0.0225, -0.0055, -0.9788, 0.0225, -0.0055, 1.1522, 0.0225, -0.0055, 1.1522, -0.0225, -0.8799, -0.9788, -0.0225, -0.8799, 1.1522, 0.0225, -0.8799, -0.9788, 0.0225, -0.8799, -0.9788, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, 1.1522, 0.0225, -0.0055, -0.9788, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, -0.9788, -0.0225, -0.0055, -0.9788, -0.0225, -0.0055, 1.1522, -0.0225, -0.8799, 1.1522, -0.0225, -0.8799, -0.9788, 0.0225, -0.0055, 1.1522, 0.0225, -0.0055, -0.9788, 0.0225, -0.8799, -0.9788, 0.0225, -0.8799, 1.1522, 0.0225, -0.0055, 1.1522, 0.0225)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gg04q"]
@@ -2296,15 +2293,6 @@ environment = SubResource("Environment_7vya7")
 transform = Transform3D(4.50399, -0.00564721, 0.00894912, 0.0256931, 0.990591, -0.00721995, -0.00956062, 0.00171633, 4.19648, 0, 0, 0)
 mesh = SubResource("PlaneMesh_g5brm")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-script = ExtResource("12_14f5m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nxxrv")
-
-[node name="doorOpen" type="AudioStreamPlayer3D" parent="MeshInstance3D/StaticBody3D"]
-stream = ExtResource("3_lk0i1")
-
 [node name="tree4" parent="." instance=ExtResource("4_ww3rf")]
 transform = Transform3D(0.499535, 0, 0, 0, 0.499535, 0, 0, 0, 0.499535, -20.8011, -0.141832, 0.386678)
 
@@ -2371,16 +2359,17 @@ transform = Transform3D(-1.09373, -1.11022e-16, 0, 0, 1.02483, -8.74228e-08, 0, 
 mesh = SubResource("ArrayMesh_14f5m")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR"]
-script = ExtResource("12_14f5m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nul8a")
-
-[node name="doorCreak" type="AudioStreamPlayer3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/StaticBody3D"]
-
 [node name="SpotLight3D" type="SpotLight3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR"]
 transform = Transform3D(-0.758975, 5.90561e-09, 0.0669277, -6.3994e-09, 0.833333, -1.46103e-07, -0.0732006, -1.461e-07, -0.830112, -0.26503, -1.19209e-07, -1.35172)
+
+[node name="Door" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR"]
+script = ExtResource("2_lk0i1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door"]
+shape = SubResource("ConcavePolygonShape3D_ii763")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door"]
+stream = ExtResource("3_lk0i1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE"]
 
@@ -2541,7 +2530,5 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3691, 0.804885, 7.53547)
 mesh = SubResource("ArrayMesh_v034a")
 skeleton = NodePath("")
-
-[connection signal="interacted" from="MeshInstance3D/StaticBody3D" to="MeshInstance3D/StaticBody3D" method="_on_interacted"]
 
 [editable path="ModularHouse"]
