@@ -1,8 +1,8 @@
 extends CollisionObject3D
 class_name Interactable
 
-#FIX
-#@onready var player = get_tree().root.Character
+@export var connect_door = StaticBody3D
+
 
 @export var prompt_message = "Interact"
 @export var prompt_input = "interact"
@@ -16,9 +16,11 @@ func get_prompt():
 			break
 	return prompt_message + "\n[" + key_name + "]"
 
-func interact(_body, collider):
+func interact(body, collider):
 	#runs when door is interacted with
 	if collider.name == "Door":
 		$DoorOpen.play()
-		#FIX
-		#player.Position = 0
+		var destination = connect_door.global_transform.origin
+		body.global_transform.origin = destination
+		
+		
