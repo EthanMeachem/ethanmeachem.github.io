@@ -19,7 +19,7 @@ func _process(delta):
 	input.x = Input.get_axis("MoveLeft","MoveRight")
 	input.z = Input.get_axis("MoveForward","MoveBack")
 	
-	velocity = ((twist_pivot.basis * input).normalized() * 150.0 * delta)
+	velocity = ((twist_pivot.basis * input).normalized() * 200.0 * delta)
 	apply_floor_snap()
 	move_and_slide()
 	if Input.is_action_just_pressed("ui_cancel"):
