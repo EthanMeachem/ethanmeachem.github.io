@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=4 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=159 format=4 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c0s3bq0ougrlr" path="res://assets/ModularHouse/ModularHouse_metal (2).png" id="27_6lj3j"]
 [ext_resource type="Script" uid="uid://chndupib88exm" path="res://footsteps.gd" id="29_6lj3j"]
 [ext_resource type="AudioStream" uid="uid://c4hym1rbigonf" path="res://assets/Audio/horror-ambience-01-66708.mp3" id="29_gwubx"]
+[ext_resource type="AudioStream" uid="uid://badbx32w0pnc" path="res://assets/Audio/footsteps-on-wooden-floor-26822.mp3" id="30_n5wc5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")
@@ -3068,7 +3069,7 @@ transform = Transform3D(-0.000194674, 0, 0.00554697, 0, 0.00555039, 0, -0.005546
 transform = Transform3D(-0.513387, -6.13327, 50.1156, 0.799259, 78.576, 3.91413, -90.2229, 0.730982, -0.250494, 699.984, -45.0068, 0)
 
 [node name="Character" parent="." instance=ExtResource("1_h7pfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.655, 1.73563, 15.5011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 515.311, -1.70167, 3.55165)
 wall_min_slide_angle = 0.0
 
 [node name="Abandoned_House" type="Node3D" parent="."]
@@ -3127,6 +3128,7 @@ shape = SubResource("ConcavePolygonShape3D_ii763")
 
 [node name="DoorOpen" type="AudioStreamPlayer" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door"]
 stream = ExtResource("3_lk0i1")
+volume_db = -11.023
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE"]
 
@@ -8513,15 +8515,22 @@ shape = SubResource("ConcavePolygonShape3D_p0dw4")
 [node name="Jumpscares" type="Node3D" parent="HouseInterior"]
 
 [node name="Footsteps" type="Area3D" parent="HouseInterior/Jumpscares"]
-transform = Transform3D(152.67, 0, 0, 0, 503.869, 0, 0, 0, 916.743, 423.361, 0.734725, 287.668)
+transform = Transform3D(-0.0489848, 0, 0, 0, -3.43796, 0, 0, 0, -4.70582, 423.558, 1.34514, 287.809)
 script = ExtResource("29_6lj3j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HouseInterior/Jumpscares/Footsteps"]
 shape = SubResource("BoxShape3D_n5wc5")
 
+[node name="Foosteps" type="AudioStreamPlayer" parent="HouseInterior/Jumpscares/Footsteps"]
+stream = ExtResource("30_n5wc5")
+volume_db = 9.106
+mix_target = 1
+
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_gwubx")
 autoplay = true
 parameters/looping = true
+
+[connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps" method="_on_body_entered"]
 
 [editable path="ModularHouse"]
