@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=4 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=165 format=4 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
@@ -31,6 +31,9 @@
 [ext_resource type="Script" uid="uid://chndupib88exm" path="res://footsteps.gd" id="29_6lj3j"]
 [ext_resource type="AudioStream" uid="uid://c4hym1rbigonf" path="res://assets/Audio/horror-ambience-01-66708.mp3" id="29_gwubx"]
 [ext_resource type="AudioStream" uid="uid://badbx32w0pnc" path="res://assets/Audio/footsteps-on-wooden-floor-26822.mp3" id="30_n5wc5"]
+[ext_resource type="Script" uid="uid://di5vdc6bljcmi" path="res://jumpscare.gd" id="31_b1qwl"]
+[ext_resource type="AudioStream" uid="uid://b0vc2r0u3jhv7" path="res://assets/Audio/jumpscare-2-206591.mp3" id="32_ms8wd"]
+[ext_resource type="PackedScene" uid="uid://c65mf4ux501s5" path="res://assets/Enemy/skeletonmonster3dmodel.glb" id="32_sd1nh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0tp6"]
 shader = ExtResource("2_2uwcf")
@@ -2720,6 +2723,42 @@ shadow_mesh = SubResource("ArrayMesh_xhtqh")
 data = PackedVector3Array(0.16, 1.2, 2, 0.16, 2.1, 1.25, 0.16, 1.2, 1.25, 0.16, 1.2, 2, 0.16, 3.2, 2, 0.16, 2.1, 1.25, 0.16, 2.1, 1.25, 0.16, 3.2, 2, 0.16, 2.4535, 1.1035, 0.16, 2.4535, 1.1035, 0.16, 3.2, 2, 0.16, 2.6, 0.75, 0.16, 2.6, -0.75, 0.16, 2.6, 0.75, 0.16, 3.2, 2, 0.16, 2.6, -0.75, 0.16, 3.2, 2, 0.16, 3.1999, -2, 0.16, 2.6, -0.75, 0.16, 3.1999, -2, 0.16, 2.4535, -1.1036, 0.16, 2.4535, -1.1036, 0.16, 3.1999, -2, 0.16, 2.1, -1.25, 0.16, 3.1999, -2, 0.16, 1.2, -1.25, 0.16, 2.1, -1.25, 0.16, 3.1999, -2, 0.16, 1.2, -2, 0.16, 1.2, -1.25, -0.16, 1.2, -2, -0.16, 2.1, -1.25, -0.16, 1.2, -1.25, -0.16, 1.2, -2, -0.16, 3.1999, -2, -0.16, 2.1, -1.25, -0.16, 2.1, -1.25, -0.16, 3.1999, -2, -0.16, 2.4535, -1.1036, -0.16, 2.4535, -1.1036, -0.16, 3.1999, -2, -0.16, 2.6, -0.75, -0.16, 2.6, 0.75, -0.16, 2.6, -0.75, -0.16, 3.1999, -2, -0.16, 2.6, 0.75, -0.16, 3.1999, -2, -0.16, 3.1999, 1.9999, -0.16, 2.6, 0.75, -0.16, 3.1999, 1.9999, -0.16, 2.4535, 1.1035, -0.16, 2.4535, 1.1035, -0.16, 3.1999, 1.9999, -0.16, 2.1, 1.25, -0.16, 1.2, 2, -0.16, 2.1, 1.25, -0.16, 3.1999, 1.9999, -0.16, 1.2, 2, -0.16, 1.2, 1.25, -0.16, 2.1, 1.25, -0.2, 0, -1.325, -0.2, 1.2, -2, -0.2, 1.2, -1.325, -0.2, 0, -1.325, -0.2, 0, -2, -0.2, 1.2, -2, 0.2, 0, 1.3249, 0.2, 1.2, 2, 0.2, 1.2, 1.3249, 0.2, 0, 1.3249, 0.2, 0, 2, 0.2, 1.2, 2, 0.2, 0, -2, 0.2, 1.2, -1.325, 0.2, 1.2, -2, 0.2, 0, -2, 0.2, 0, -1.325, 0.2, 1.2, -1.325, -0.2, 0, 2, -0.2, 1.2, 1.3249, -0.2, 1.2, 2, -0.2, 0, 2, -0.2, 0, 1.3249, -0.2, 1.2, 1.3249, 0.2, 2.6706, 0.7503, -0.2, 2.6706, -0.7503, 0.2, 2.6706, -0.7503, -0.2, 2.6706, -0.7503, 0.2, 2.5105, -1.147, 0.2, 2.6706, -0.7503, 0.2, 2.6706, 0.7503, -0.2, 2.6706, 0.7503, -0.2, 2.6706, -0.7503, -0.2, 2.6706, -0.7503, -0.2, 2.5105, -1.147, 0.2, 2.5105, -1.147, -0.2, 2.5105, 1.1469, -0.2, 2.6706, 0.7503, 0.2, 2.6706, 0.7503, -0.2, 2.5105, -1.147, 0.2, 2.1, -1.325, 0.2, 2.5105, -1.147, -0.2, 2.5105, 1.1469, 0.2, 2.6706, 0.7503, 0.2, 2.5105, 1.1469, -0.2, 2.5105, -1.147, -0.2, 2.1, -1.325, 0.2, 2.1, -1.325, 0.2, 2.1, -1.325, -0.2, 2.1, -1.325, -0.2, 0, -1.325, 0.2, 2.1, -1.325, -0.2, 0, -1.325, 0.2, 0, -1.325, -0.2, 2.1, 1.3249, -0.2, 2.5105, 1.1469, 0.2, 2.5105, 1.1469, -0.2, 2.1, 1.3249, 0.2, 2.5105, 1.1469, 0.2, 2.1, 1.3249, 0.2, 2.1, 1.3249, -0.2, 0, 1.3249, -0.2, 2.1, 1.3249, 0.2, 2.1, 1.3249, 0.2, 0, 1.3249, -0.2, 0, 1.3249, 0.2, 2.6, 0.75, -0.2, 2.6, -0.75, -0.2, 2.6, 0.75, 0.2, 2.6, 0.75, 0.2, 2.6, -0.7501, -0.2, 2.6, -0.75, -0.2, 2.6, 0.75, 0.2, 2.4535, 1.1035, 0.2, 2.6, 0.75, -0.2, 2.4535, -1.1036, -0.2, 2.6, -0.75, 0.2, 2.6, -0.7501, -0.2, 2.6, 0.75, -0.2, 2.4535, 1.1035, 0.2, 2.4535, 1.1035, -0.2, 2.4535, -1.1036, 0.2, 2.6, -0.7501, 0.2, 2.4535, -1.1036, -0.2, 2.4535, 1.1035, 0.2, 2.1, 1.25, 0.2, 2.4535, 1.1035, -0.2, 2.1, -1.25, -0.2, 2.4535, -1.1036, 0.2, 2.4535, -1.1036, -0.2, 2.4535, 1.1035, -0.2, 2.1, 1.25, 0.2, 2.1, 1.25, -0.2, 0, 1.25, 0.2, 2.1, 1.25, -0.2, 2.1, 1.25, -0.2, 0, 1.25, 0.2, 0, 1.25, 0.2, 2.1, 1.25, -0.2, 2.1, -1.25, 0.2, 2.4535, -1.1036, 0.2, 2.1, -1.25, 0.2, 2.1, -1.25, -0.2, 0, -1.25, -0.2, 2.1, -1.25, 0.2, 2.1, -1.25, 0.2, 0, -1.25, -0.2, 0, -1.25, 0.2, 2.1, 1.25, 0.2, 0, 1.3249, 0.2, 2.1, 1.3249, 0.2, 2.1, 1.25, 0.2, 0, 1.25, 0.2, 0, 1.3249, 0.2, 2.5105, 1.1469, 0.2, 2.1, 1.25, 0.2, 2.1, 1.3249, 0.2, 2.5105, 1.1469, 0.2, 2.4535, 1.1035, 0.2, 2.1, 1.25, 0.2, 2.6706, 0.7503, 0.2, 2.4535, 1.1035, 0.2, 2.5105, 1.1469, 0.2, 2.6706, 0.7503, 0.2, 2.6, 0.75, 0.2, 2.4535, 1.1035, 0.2, 2.6706, 0.7503, 0.2, 2.6, -0.7501, 0.2, 2.6, 0.75, 0.2, 2.6706, 0.7503, 0.2, 2.6706, -0.7503, 0.2, 2.6, -0.7501, 0.2, 2.5105, -1.147, 0.2, 2.6, -0.7501, 0.2, 2.6706, -0.7503, 0.2, 2.5105, -1.147, 0.2, 2.4535, -1.1036, 0.2, 2.6, -0.7501, 0.2, 2.1, -1.325, 0.2, 2.4535, -1.1036, 0.2, 2.5105, -1.147, 0.2, 2.1, -1.325, 0.2, 2.1, -1.25, 0.2, 2.4535, -1.1036, 0.2, 2.1, -1.325, 0.2, 0, -1.25, 0.2, 2.1, -1.25, 0.2, 2.1, -1.325, 0.2, 0, -1.325, 0.2, 0, -1.25, -0.2, 2.1, -1.25, -0.2, 0, -1.325, -0.2, 2.1, -1.325, -0.2, 2.1, -1.25, -0.2, 0, -1.25, -0.2, 0, -1.325, -0.2, 2.5105, -1.147, -0.2, 2.1, -1.25, -0.2, 2.1, -1.325, -0.2, 2.5105, -1.147, -0.2, 2.4535, -1.1036, -0.2, 2.1, -1.25, -0.2, 2.6706, -0.7503, -0.2, 2.4535, -1.1036, -0.2, 2.5105, -1.147, -0.2, 2.6706, -0.7503, -0.2, 2.6, -0.75, -0.2, 2.4535, -1.1036, -0.2, 2.6706, -0.7503, -0.2, 2.6, 0.75, -0.2, 2.6, -0.75, -0.2, 2.6706, -0.7503, -0.2, 2.6706, 0.7503, -0.2, 2.6, 0.75, -0.2, 2.5105, 1.1469, -0.2, 2.6, 0.75, -0.2, 2.6706, 0.7503, -0.2, 2.5105, 1.1469, -0.2, 2.4535, 1.1035, -0.2, 2.6, 0.75, -0.2, 2.1, 1.3249, -0.2, 2.4535, 1.1035, -0.2, 2.5105, 1.1469, -0.2, 2.1, 1.3249, -0.2, 2.1, 1.25, -0.2, 2.4535, 1.1035, -0.2, 2.1, 1.3249, -0.2, 0, 1.25, -0.2, 2.1, 1.25, -0.2, 2.1, 1.3249, -0.2, 0, 1.3249, -0.2, 0, 1.25, -0.2, 1.2, 2, 0.2, 1.2, 1.3249, 0.2, 1.2, 2, -0.2, 1.2, 2, -0.2, 1.2, 1.3249, 0.2, 1.2, 1.3249, -0.2, 1.2, -1.325, 0.2, 1.2, -2, 0.2, 1.2, -1.325, -0.2, 1.2, -1.325, -0.2, 1.2, -2, 0.2, 1.2, -2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5wc5"]
+
+[sub_resource type="Animation" id="Animation_ms8wd"]
+resource_name = "JumpScare"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../skeletonmonster3dmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(435.461, 1.25934, 288.084), Vector3(435.461, 1.25934, 286.164), Vector3(432.183, 1.25934, 286.164)]
+}
+
+[sub_resource type="Animation" id="Animation_g2oc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../skeletonmonster3dmodel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(435.461, 1.25934, 288.084)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8f4m"]
+_data = {
+&"JumpScare": SubResource("Animation_ms8wd"),
+&"RESET": SubResource("Animation_g2oc0")
+}
 
 [node name="Node3D" type="Node3D"]
 
@@ -8515,7 +8554,7 @@ shape = SubResource("ConcavePolygonShape3D_p0dw4")
 [node name="Jumpscares" type="Node3D" parent="HouseInterior"]
 
 [node name="Footsteps" type="Area3D" parent="HouseInterior/Jumpscares"]
-transform = Transform3D(-0.0489848, 0, 0, 0, -3.43796, 0, 0, 0, -4.70582, 423.558, 1.34514, 287.809)
+transform = Transform3D(-0.0489848, 0, 0, 0, -3.43796, 0, 0, 0, -4.70582, 422.145, 1.34514, 287.809)
 script = ExtResource("29_6lj3j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HouseInterior/Jumpscares/Footsteps"]
@@ -8526,11 +8565,32 @@ stream = ExtResource("30_n5wc5")
 volume_db = 9.106
 mix_target = 1
 
+[node name="Jumpscare" type="Area3D" parent="HouseInterior/Jumpscares"]
+transform = Transform3D(-0.0489848, 0, 0, 0, -3.43796, 0, 0, 0, -4.70582, 431.893, 1.70593, 287.601)
+script = ExtResource("31_b1qwl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HouseInterior/Jumpscares/Jumpscare"]
+shape = SubResource("BoxShape3D_n5wc5")
+
+[node name="ScareSound" type="AudioStreamPlayer" parent="HouseInterior/Jumpscares/Jumpscare"]
+stream = ExtResource("32_ms8wd")
+mix_target = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HouseInterior/Jumpscares"]
+root_node = NodePath("../Jumpscare")
+libraries = {
+&"": SubResource("AnimationLibrary_h8f4m")
+}
+
+[node name="skeletonmonster3dmodel" parent="HouseInterior/Jumpscares" instance=ExtResource("32_sd1nh")]
+transform = Transform3D(-0.00535511, 0, -1.69226, 0, 1.14757, 0, 1.23719, 0, -0.00732484, 435.461, 1.25934, 288.084)
+
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_gwubx")
 autoplay = true
 parameters/looping = true
 
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps" method="_on_body_entered"]
+[connection signal="body_entered" from="HouseInterior/Jumpscares/Jumpscare" to="HouseInterior/Jumpscares/Jumpscare" method="_on_body_entered"]
 
 [editable path="ModularHouse"]
