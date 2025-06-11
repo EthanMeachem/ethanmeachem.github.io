@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4qq2mmta317r"]
+
+[ext_resource type="Script" uid="uid://4a1u1spwiqna" path="res://dialogue.gd" id="1_oi3j2"]
+[ext_resource type="FontFile" uid="uid://bcp2j0xsfa8a2" path="res://assets/FONT/ARCADECLASSIC.TTF" id="2_758ep"]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_oi3j2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 174.0
+offset_right = 293.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("2_758ep")
+theme_override_font_sizes/font_size = 15
+text = "Dialogue"
+horizontal_alignment = 1
+autowrap_mode = 2

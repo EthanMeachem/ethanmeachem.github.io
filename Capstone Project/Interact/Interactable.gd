@@ -22,5 +22,6 @@ func interact(body, collider):
 		$DoorOpen.play()
 		var destination = connect_door.global_transform.origin
 		body.global_transform.origin = destination
+		emit_signal("door_entered")
 		
 		

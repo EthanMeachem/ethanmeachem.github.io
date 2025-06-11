@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=4 uid="uid://dg0f1ag4tsdql"]
+[gd_scene load_steps=166 format=4 uid="uid://dg0f1ag4tsdql"]
 
 [ext_resource type="PackedScene" uid="uid://71dty86n53il" path="res://Character.tscn" id="1_h7pfk"]
 [ext_resource type="Shader" uid="uid://cnpipaay7pdi4" path="res://Shaders/CrtShader.gdshader" id="2_2uwcf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://jilfex2mi8dm" path="res://assets/Foliage/3d Trees/tree_3.tscn" id="6_0ejt0"]
 [ext_resource type="PackedScene" uid="uid://blq3ityg62cib" path="res://assets/Foliage/3d Trees/tree_1.tscn" id="7_pey1u"]
 [ext_resource type="PackedScene" uid="uid://daqdlfh5ktja8" path="res://assets/ModularHouse/modular_house.tscn" id="8_0ejt0"]
+[ext_resource type="PackedScene" uid="uid://b4qq2mmta317r" path="res://dialogue.tscn" id="9_ms8wd"]
 [ext_resource type="PackedScene" uid="uid://c6on4s05ylbhg" path="res://terrain.tscn" id="9_pey1u"]
 [ext_resource type="Texture2D" uid="uid://clr027mq0rc4e" path="res://assets/HouseExterior/Abandoned_House_Madera4.jpg.jpg" id="10_ii763"]
 [ext_resource type="Texture2D" uid="uid://do1c3oylq2nq0" path="res://assets/HouseExterior/Abandoned_House_Untitled.png" id="11_lk0i1"]
@@ -3108,8 +3109,10 @@ transform = Transform3D(-0.000194674, 0, 0.00554697, 0, 0.00555039, 0, -0.005546
 transform = Transform3D(-0.513387, -6.13327, 50.1156, 0.799259, 78.576, 3.91413, -90.2229, 0.730982, -0.250494, 699.984, -45.0068, 0)
 
 [node name="Character" parent="." instance=ExtResource("1_h7pfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 460.611, 1.39789, 3.55165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 482.024, -1.6621, 3.55165)
 wall_min_slide_angle = 0.0
+
+[node name="Dialogue" parent="Character" instance=ExtResource("9_ms8wd")]
 
 [node name="Abandoned_House" type="Node3D" parent="."]
 transform = Transform3D(0.0163568, 0, -1.19989, 0, 1.2, 0, 1.19989, 0, 0.0163568, 527.532, -2.41156, -7.54576)
@@ -3168,6 +3171,8 @@ shape = SubResource("ConcavePolygonShape3D_ii763")
 [node name="DoorOpen" type="AudioStreamPlayer" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door"]
 stream = ExtResource("3_lk0i1")
 volume_db = -11.023
+
+[node name="Dialogue" parent="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door" instance=ExtResource("9_ms8wd")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Abandoned_House/HOUSE DO NOT DELETE"]
 
@@ -8565,6 +8570,8 @@ stream = ExtResource("30_n5wc5")
 volume_db = 14.894
 mix_target = 1
 
+[node name="Dialogue" parent="HouseInterior/Jumpscares/Footsteps" instance=ExtResource("9_ms8wd")]
+
 [node name="Jumpscare" type="Area3D" parent="HouseInterior/Jumpscares"]
 transform = Transform3D(-0.0489848, 0, 0, 0, -3.43796, 0, 0, 0, -4.70582, 431.893, 1.70593, 287.601)
 script = ExtResource("31_b1qwl")
@@ -8591,6 +8598,7 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps" method="_on_body_entered"]
+[connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps/Dialogue" method="_on_footsteps_body_entered"]
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Jumpscare" to="HouseInterior/Jumpscares/Jumpscare" method="_on_body_entered"]
 
 [editable path="ModularHouse"]

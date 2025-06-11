@@ -11,4 +11,7 @@ func _on_body_entered(body):
 		$ScareSound.play()
 		animationPlayer.play("JumpScare")
 		token+=1
+		await get_tree().create_timer(0.75).timeout
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://game_over.tscn")
 		
