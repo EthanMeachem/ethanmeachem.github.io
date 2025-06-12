@@ -8597,6 +8597,7 @@ stream = ExtResource("29_gwubx")
 autoplay = true
 parameters/looping = true
 
+[connection signal="door_entered" from="Abandoned_House/HOUSE DO NOT DELETE/DOOR/Door" to="Character/Dialogue" method="_door_entered"]
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps" method="_on_body_entered"]
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Footsteps" to="HouseInterior/Jumpscares/Footsteps/Dialogue" method="_on_footsteps_body_entered"]
 [connection signal="body_entered" from="HouseInterior/Jumpscares/Jumpscare" to="HouseInterior/Jumpscares/Jumpscare" method="_on_body_entered"]

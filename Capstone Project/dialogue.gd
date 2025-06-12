@@ -28,5 +28,7 @@ func _on_footsteps_body_entered(body: Node3D):
 		add_text("What   the   hell   is   that   noise?")
 		token+=1
 
-func door_entered():
-	add_text("Seems   like   nobodies   home,   must   be   abandoned.")
+
+
+func _door_entered() -> void:
+	add_text("This   place   looks   abandoned,   I   guess   nobody   will   mind   if   I   stay   the   night.")

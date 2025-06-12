@@ -2,7 +2,7 @@ extends CollisionObject3D
 class_name Interactable
 
 @export var connect_door = StaticBody3D
-
+signal door_entered()
 
 @export var prompt_message = "Interact"
 @export var prompt_input = "interact"
@@ -22,6 +22,6 @@ func interact(body, collider):
 		$DoorOpen.play()
 		var destination = connect_door.global_transform.origin
 		body.global_transform.origin = destination
-		emit_signal("door_entered")
+		door_entered.emit()
 		
 		
